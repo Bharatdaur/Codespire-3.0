@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Price Comparison - Smart Shopping Assistant</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🤖</div>
+                <div class="logo-text">
+                    <h1>AI Price Finder</h1>
+                    <p>Powered by Gemini AI</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-value" id="totalSearches">0</span>
+                    <span class="stat-label">Searches</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="totalSavings">₹0</span>
+                    <span class="stat-label">Saved</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container glass-card">
+                <h2 class="search-title">Find the Best Price Across Platforms</h2>
+                <p class="search-subtitle">Compare prices on Amazon & Flipkart instantly</p>
+
+                <form id="searchForm" class="search-form">
+                    <div class="search-input-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input"
+                            placeholder="Search for products... (e.g., laptop, smartphone, headphones)" required>
+                        <button type="submit" class="search-button" id="searchButton">
+                            <span class="button-text">Search Now</span>
+                            <span class="button-loader"></span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Quick Search Suggestions -->
+                <div class="quick-search">
+                    <span class="quick-label">Popular:</span>
+                    <button class="quick-tag" data-query="laptop">💻 Laptop</button>
+                    <button class="quick-tag" data-query="smartphone">📱 Smartphone</button>
+                    <button class="quick-tag" data-query="wireless mouse">🖱️ Mouse</button>
+                    <button class="quick-tag" data-query="headphones">🎧 Headphones</button>
+                    <button class="quick-tag" data-query="smartwatch">⌚ Smartwatch</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state hidden">
+            <div class="loading-card glass-card">
+                <div class="loading-spinner"></div>
+                <h3>Analyzing Prices...</h3>
+                <p id="loadingText">Searching across Amazon & Flipkart</p>
+                <div class="loading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <!-- Best Deal Card -->
+            <div class="best-deal-card glass-card">
+                <div class="best-deal-badge">🏆 Best Deal</div>
+                <div class="best-deal-content">
+                    <div class="best-deal-platform" id="bestPlatform">MEESHO</div>
+                    <div class="best-deal-price">
+                        <span class="currency">₹</span>
+                        <span class="price" id="bestPrice">0</span>
+                    </div>
+                    <div class="best-deal-original">
+                        <span class="original-price" id="bestOriginalPrice">₹0</span>
+                        <span class="discount-badge" id="bestDiscount">0% OFF</span>
+                    </div>
+                    <div class="savings-info">
+                        <span class="savings-label">You Save:</span>
+                        <span class="savings-amount" id="savingsAmount">₹0</span>
+                    </div>
+                    <div class="ai-insight" id="aiSummary">
+                        💡 AI analyzing the best deal for you...
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Recommendations -->
+            <div class="recommendations-grid">
+                <div class="recommendation-card glass-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Detailed Analysis</h3>
+                    <p id="detailedAnalysis">Loading analysis...</p>
+                </div>
+                <div class="recommendation-card glass-card">
+                    <div class="card-icon">⏰</div>
+                    <h3>When to Buy</h3>
+                    <p id="timingAdvice">Calculating optimal timing...</p>
+                </div>
+            </div>
+
+            <!-- Price Comparison Table -->
+            <div class="comparison-section glass-card">
+                <h3 class="section-title">📈 Price Comparison Across Platforms</h3>
+                <div class="comparison-table" id="comparisonTable">
+                    <!-- Table will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Additional Tips -->
+            <div class="tips-section glass-card" id="tipsSection">
+                <h3 class="section-title">💡 Smart Shopping Tips</h3>
+                <div class="tips-grid" id="tipsGrid">
+                    <!-- Tips will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Powered by <strong>Gemini AI</strong> • Comparing Amazon & Flipkart</p>
+    </footer>
+
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>
